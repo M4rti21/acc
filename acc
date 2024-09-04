@@ -5,12 +5,25 @@
 # 3 - Background
 # 4 - Disabled
 
+help() {
+  printf "How to use:
+1 - Accent
+2 - Foreground
+3 - Background
+4 - Disabled"
+}
+
 # files
 DISCORD="$HOME/.var/app/dev.vencord.Vesktop/config/vesktop/themes/DNOME.css"
 HYPRLAND="$HOME/.config/hypr/hyprland/theme.conf"
 TOFI="$HOME/.config/tofi/config"
 DUNST="$HOME/.config/dunst/dunstrc"
 GTK="$HOME/.local/share/themes/adw-gtk3-custom/gtk-*/gtk*.css"
+
+if [ $# -ge 0 ]; then
+    help
+    exit 1
+fi
 
 # Change accent color if provided
 if [ $# -ge 1 ]; then
